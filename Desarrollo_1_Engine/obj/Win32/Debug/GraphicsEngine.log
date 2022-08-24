@@ -1,0 +1,10 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(444,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(445,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  BaseGame.cpp
+  Renderer.cpp
+  Window.cpp
+  Generando código...
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+LINK : warning LNK4098: la biblioteca predeterminada'LIBCMT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+glew32s.lib(glew.obj) : warning LNK4099: no se encontró PDB 'glew_static.pdb' con 'glew32s.lib(glew.obj)' o en 'C:\Users\Administrador\Desktop\Graficos_1\Desarrollo_1_Engine\bin\Win32\Debug\glew_static.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+  GraphicsEngine.vcxproj -> C:\Users\Administrador\Desktop\Graficos_1\Desarrollo_1_Engine\bin\Win32\Debug\GraphicsEngine.exe
