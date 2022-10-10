@@ -53,6 +53,23 @@ int main(void)
 {
     GLFWwindow* window;
 
+    std::string vertexShader =
+        "#version 330 core\n"
+        "\n"
+        "layout(location = 0) in vec4 position;\n"
+        "void main()\n"
+        "{\n"
+        "gl_Position = position;"
+        "}\n";
+    std::string fragmentShader =
+        "#version 330 core\n"
+        "\n"
+        "layout(location = 0) out vec4 color;"
+        "void main()\n"
+        "{\n"
+        "color = vec4 (1.0, 0.0, 0.0, 1.0);\n"
+        "}\n";
+
     // Init lib
     if (!glfwInit())
         return -1;
@@ -74,44 +91,38 @@ int main(void)
     std::cout << glGetString(GL_VERSION) << std::endl;
 
     // triangle load
-    float positions[6] =
+    float positions[] =
     {
         -0.5f, -0.5f,
-         0.0f,  0.5f,
-         0.5f, -0.5f
+         0.5f, -0.5f,
+         0.5f,  0.5f,
+        -0.5f,  0.5f,
+    };
+
+    unsigned int indices[] = {
+        0, 1, 2,
+        2, 3, 0
     };
 
     unsigned int buffer;
     glGenBuffers(1, &buffer);   
     glBindBuffer(GL_ARRAY_BUFFER, buffer);
-    glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), positions, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 6 * 2 * sizeof(float), positions, GL_STATIC_DRAW);
+
 
     //Attrib - Layouts
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
 
-    std::string vertexShader =
-        "#version 330 core\n"
-        "\n"
-        "layout(location = 0) in vec4 position;\n"
-        "void main()\n"
-        "{\n"
-        "gl_Position = position;"
-        "}\n";
-    std::string fragmentShader =
-        "#version 330 core\n"
-        "\n"
-        "layout(location = 0) out vec4 color;"
-        "void main()\n"
-        "{\n"
-        "color = vec4 (1.0, 0.0, 0.0, 1.0);\n"
-        "}\n";
+    unsigned int ibo; //Index Buffer Object = ibo
+    glGenBuffers(1, &ibo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, 6 * sizeof(unsigned int), indices, GL_STATIC_DRAW);
 
     unsigned int shader = CreateShader(vertexShader, fragmentShader);
     glUseProgram(shader);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
-
 
     // Main Loop
     while (!glfwWindowShouldClose(window))
@@ -120,7 +131,7 @@ int main(void)
         glClear(GL_COLOR_BUFFER_BIT);
 
         // Draw Binded buffer
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 
         // Swap front and back buffers 
         glfwSwapBuffers(window);
