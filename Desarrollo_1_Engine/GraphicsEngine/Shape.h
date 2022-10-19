@@ -1,6 +1,6 @@
 #ifndef SHAPE_H
 #define SHAPE_H
-#include "export/export.h"
+#include "export.h"
 #include "Entity2D.h"
 
 class Shape : public Entity2D
