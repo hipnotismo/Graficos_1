@@ -1,9 +1,11 @@
 #ifndef WINDOW_H
 #define WINDOW_H
+#include "Export.h"
 
 struct GLFWmonitor;
 struct GLFWwindow;
-class Window
+
+class ENGINE_API Window
 {
 private:
 	GLFWwindow* window;

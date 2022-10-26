@@ -3,11 +3,12 @@
 #include "renderer.h"
 #include "window.h"
 #include "Shape.h"
+#include "Export.h"
 
 struct GLFWmonitor;
 struct GLFWwindow;
 
-class BaseGame
+class ENGINE_API BaseGame
 {
 protected:
 	Window* window;

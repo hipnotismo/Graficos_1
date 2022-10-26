@@ -2,8 +2,9 @@
 #define ENTITY2D_H
 #include "export.h"
 #include "Entity.h"
+#include "Export.h"
 
-class Entity2D : public Entity
+class ENGINE_API Entity2D : public Entity
 {
 public:
 	Entity2D();

@@ -1,9 +1,10 @@
 #ifndef RENDERER_H
 #define RENDERER_H
-#include "glm/glm.hpp"
-#include"glm/gtc/type_ptr.hpp"
+#include "glm.hpp"
+#include "Export.h"
+#include <gtc\type_ptr.hpp>
 
-class  Renderer
+class ENGINE_API Renderer
 {
 private:
 	unsigned int model;

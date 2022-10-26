@@ -2,10 +2,14 @@
 #define ENTITY_H
 #include "export.h"
 #include "renderer.h"
-#include "glm/glm.hpp"
-#include "glm/gtc/matrix_transform.hpp"
+#include "glm.hpp"
+#include "Export.h"
+#include <vec3.hpp> // glm::vec3
+#include <vec4.hpp> // glm::vec4
+#include <mat4x4.hpp> // glm::mat4
+#include <gtc/matrix_transform.hpp>
 
-class Entity
+class ENGINE_API Entity
 {
 protected:
 	glm::mat4 model;
