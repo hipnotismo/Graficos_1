@@ -8,7 +8,7 @@ class ENGINE_API Shape : public Entity2D
 {
 private:
 	float VertexTriangle[18] = {
-	-0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,// X,Y,Z  R,G,B
+	-0.5f, -0.5f, 0.0f,   1.0f, 0.0f, 1.0f,// X,Y,Z  R,G,B
 	 0.5f, -0.5f, 0.0f,   1.0f, 1.0f, 0.0f,
 	 0.0f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f
 	};

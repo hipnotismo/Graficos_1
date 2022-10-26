@@ -1,5 +1,6 @@
 #ifndef RENDERER_H
 #define RENDERER_H
+
 #include "glm.hpp"
 #include "Export.h"
 #include <gtc\type_ptr.hpp>
