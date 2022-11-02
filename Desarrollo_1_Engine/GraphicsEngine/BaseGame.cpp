@@ -53,7 +53,7 @@ void BaseGame::RendererInit()
 	renderer->CreateBuffers();
 	renderer->BindBuffers();
 
-	renderer->CreateProgram(vertexShaderSource, fragmentShaderSource);
+	renderer->CreateProgram("../Res/Shader/VertexShader.shader", "../Res/Shader/FragmentShader.shader");
 	renderer->DefVertexAttribute();
 
 	renderer->CallUniformShaders();
