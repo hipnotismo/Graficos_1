@@ -64,7 +64,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Shader.shader">
+    <None Include="FragmentShader.shader">
       <Filter>Res\Shaders</Filter>
     </None>
   </ItemGroup>
