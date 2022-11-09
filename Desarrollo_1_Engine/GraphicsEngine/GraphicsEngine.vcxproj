@@ -153,6 +153,7 @@
     <ClCompile Include="Entity2D.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="TextureImporter.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +163,8 @@
     <ClInclude Include="Export.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Shape.h" />
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="TextureImporter.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
