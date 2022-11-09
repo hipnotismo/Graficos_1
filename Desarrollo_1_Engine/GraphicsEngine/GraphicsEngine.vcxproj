@@ -165,6 +165,8 @@
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Res\Shaders\SpriteFragmentShader.shader" />
+    <None Include="..\Res\Shaders\SpriteVertexSpriteShader.SWshader" />
     <None Include="Res\Shaders\FragmentShader.shader" />
     <None Include="Res\Shaders\VertexShader.shader" />
   </ItemGroup>

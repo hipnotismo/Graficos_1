@@ -70,5 +70,11 @@
     <None Include="Res\Shaders\VertexShader.shader">
       <Filter>Res\Shaders</Filter>
     </None>
+    <None Include="..\Res\Shaders\SpriteFragmentShader.shader">
+      <Filter>Res\Shaders</Filter>
+    </None>
+    <None Include="..\Res\Shaders\SpriteVertexSpriteShader.SWshader">
+      <Filter>Res\Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
