@@ -7,6 +7,7 @@ BaseGame::BaseGame()
 {
 	window = new Window();
 	renderer = new Renderer();
+	renderer->SetStaticRenderer(renderer);
 }
 BaseGame::~BaseGame()
 {

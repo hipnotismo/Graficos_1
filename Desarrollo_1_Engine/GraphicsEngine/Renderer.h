@@ -23,9 +23,9 @@ public:
 	void DefVertexAttribute();
 	void CallUniformShaders();
 	void UpdateUniformShaders(glm::mat4 modelMatrix);
+	static Renderer* myRef;
+	void SetStaticRenderer(Renderer* newRef);
+	Renderer* GetStaticRenderer();
 };
-// settings
-//const unsigned int SCR_WIDTH = 800;
-//const unsigned int SCR_HEIGHT = 600;
 
 #endif

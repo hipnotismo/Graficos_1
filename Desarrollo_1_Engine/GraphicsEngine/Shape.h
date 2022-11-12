@@ -18,7 +18,6 @@ private:
 	};
 public:
 	Shape();
-	Shape(Renderer* renderer);
 	void Draw();
 };
 

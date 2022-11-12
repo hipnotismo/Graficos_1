@@ -6,6 +6,7 @@
 #include <sstream>
 
 
+Renderer* Renderer::myRef;
 
 Renderer::Renderer()
 {
@@ -55,6 +56,14 @@ void Renderer::UpdateUniformShaders(glm::mat4 modelMatrix)
 	glUniformMatrix4fv(model, 1, GL_FALSE, glm::value_ptr(modelMatrix)); //update model in the shader
 }
 
+void Renderer::SetStaticRenderer(Renderer* newRef)
+{
+	myRef = newRef;
+}
+Renderer* Renderer::GetStaticRenderer()
+{
+	return myRef;
+}
 
 unsigned int Renderer::CompileShader(unsigned int type, const char* shaderPath) { //first: ShaderType(Fragment, vertex)
 																		//second:Dir to archive
