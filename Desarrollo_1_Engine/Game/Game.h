@@ -4,6 +4,8 @@ class Game : public BaseGame
 {
 private:
 	Shape shape;
+	Shape squareAuto;
+
 	void Update();
 	void Start();
 public:

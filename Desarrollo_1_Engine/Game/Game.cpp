@@ -2,7 +2,9 @@
 
 Game::Game()
 {
-	shape = Shape();
+	//shape = Shape();
+	squareAuto = Shape(ShapeType::Square);
+
 }
 
 void Game::Play()
@@ -13,14 +15,21 @@ void Game::Play()
 
 void Game::Start()
 {
-	shape.SetPosition(0.5f, 0.0f, 0.0f);
+	//shape.SetPosition(0.5f, 0.0f, 0.0f);
+	squareAuto.SetPosition(-0.0f, 0.0f, 0.0f);
+
 }
-float a = 0;
+float a = 1;
 void Game::Update()
 {
 	a += 0.0001;
 	shape.Rotate(0, 0, a);
-	shape.Scale(0.1 + a, 1, 1);
+	/*shape.Scale(0.1 + a, 1, 1);
 	shape.SetPosition(-1 + a, 0, 0);
-	shape.Draw();
+	squareAuto.Draw();*/
+
+	squareAuto.Rotate(0, 0, 0 + a);
+
+	//shape.Draw();
+	squareAuto.Draw();
 }
