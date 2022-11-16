@@ -77,6 +77,12 @@ void BaseGame::UpdateEngine()
 	}
 	EngineEnd();
 }
+
+void BaseGame::CameraMove(float x, float y, float z)
+{
+	renderer->CameraMove(x, y, z);
+}
+
 void BaseGame::EngineEnd()
 {
 	glfwTerminate();

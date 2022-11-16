@@ -23,6 +23,7 @@ protected:
 	glm::vec3 rotation;
 	glm::vec3 localScale;
 
+
 	void UpdateModel();
 
 	void RotateX(float x);
@@ -39,6 +40,9 @@ public:
 	float GetPositionX();
 	float GetPositionY();
 	float GetPositionZ();
+
 };
+
+
 
 #endif

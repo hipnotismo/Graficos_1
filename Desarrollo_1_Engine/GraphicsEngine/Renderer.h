@@ -8,7 +8,9 @@
 class ENGINE_API Renderer
 {
 private:
-	unsigned int model;
+	unsigned int modelLoc;
+	unsigned int projectLoc;
+	unsigned int viewLoc; 
 public:
 	Renderer();
 	void Draw(float* vertex, int vertexLength, unsigned int* index, int indexLength, glm::mat4 modelMatrix);
@@ -22,10 +24,24 @@ public:
 	void CreateProgram(const char* vertexShaderPath, const char* pixelShaderPath);
 	void DefVertexAttribute();
 	void CallUniformShaders();
-	void UpdateUniformShaders(glm::mat4 modelMatrix);
 	static Renderer* myRef;
 	void SetStaticRenderer(Renderer* newRef);
 	Renderer* GetStaticRenderer();
+
+	void UpdateModelUniformShaders(glm::mat4 modelMatrix);
+	void UpdateProjectUniformShaders(glm::mat4 projectMatrix);
+	void UpdateProjection();
+	void UpdateViewUniformShaders(glm::mat4 viewMatrix);
+	void UpdateView();
+
+	void CameraMove(float x, float y, float z);
+	float cameraSpeed = 0.01f; // adjust accordingly
+
+	glm::mat4 projection; //size/count of pixel inside the viewport
+	glm::mat4 view; //move the "camera" but really move all object in the inverse
+	glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+	glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+	glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 };
 
 #endif

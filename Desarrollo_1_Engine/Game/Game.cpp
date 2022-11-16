@@ -16,19 +16,25 @@ void Game::Play()
 void Game::Start()
 {
 	//shape.SetPosition(0.5f, 0.0f, 0.0f);
-	squareAuto.SetPosition(-0.0f, 0.0f, 0.0f);
+	squareAuto.SetPosition(1.0f, 0.0f, 0.0f);
 
 }
-float a = 1;
+float a = 1.0f;
+float cameraX = 0.1f;
+float cameraY = 0.1f;
+float cameraZ = 0.1f;
+
 void Game::Update()
 {
 	a += 0.0001;
-	shape.Rotate(0, 0, a);
+	//shape.Rotate(0, 0, a);
 	/*shape.Scale(0.1 + a, 1, 1);
 	shape.SetPosition(-1 + a, 0, 0);
 	squareAuto.Draw();*/
 
-	squareAuto.Rotate(0, 0, 0 + a);
+	CameraMove(cameraX, cameraY, cameraZ);
+
+	squareAuto.Rotate(0.0f, 0.0f, 0.0f + a);
 
 	//shape.Draw();
 	squareAuto.Draw();
