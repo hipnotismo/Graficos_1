@@ -42,6 +42,9 @@
     <ClCompile Include="TextureImporter.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseGame.h">
@@ -71,18 +74,21 @@
     <ClInclude Include="stb_image.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Res\Shaders\SpriteFragmentShader.shader">
-      <Filter>Res\Shaders</Filter>
-    </None>
-    <None Include="..\Res\Shaders\SpriteVertexSpriteShader.SWshader">
       <Filter>Res\Shaders</Filter>
     </None>
     <None Include="..\Res\Shaders\FragmentShader.shader">
       <Filter>Res\Shaders</Filter>
     </None>
     <None Include="..\Res\Shaders\VertexShader.shader">
+      <Filter>Res\Shaders</Filter>
+    </None>
+    <None Include="..\Res\Shaders\SpriteVertexShader.shader">
       <Filter>Res\Shaders</Filter>
     </None>
   </ItemGroup>

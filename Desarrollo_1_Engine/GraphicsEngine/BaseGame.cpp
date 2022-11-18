@@ -42,10 +42,11 @@ void BaseGame::RendererInit()
 	renderer->CreateBuffers();
 	renderer->BindBuffers();
 
-	renderer->CreateProgram("Res/Shaders/VertexShader.shader", "Res/Shaders/FragmentShader.shader");
-	//renderer->CreateProgram("VertexShader.shader", "FragmentShader.shader");
+	/*renderer->CreateProgram("Res/Shaders/VertexShader.shader", "Res/Shaders/FragmentShader.shader");
+	renderer->DefVertexAttribute();*/
 
-	renderer->DefVertexAttribute();
+	renderer->CreateProgram("Res/Shaders/SpriteVertexShader.shader", "Res/Shaders/SpriteFragmentShader.shader");
+	renderer->DefVertexSpriteAttribute();
 
 	renderer->CallUniformShaders();
 }
