@@ -3,6 +3,7 @@
 #include "renderer.h"
 #include "window.h"
 #include "Shape.h"
+#include "Sprite.h"
 #include "Export.h"
 
 struct GLFWmonitor;
@@ -28,5 +29,7 @@ public:
 	void UpdateEngine();
 	void virtual Update() = 0;
 	void virtual Start() = 0;
+	void CameraMove(float x, float y, float z);
+
 };
 #endif

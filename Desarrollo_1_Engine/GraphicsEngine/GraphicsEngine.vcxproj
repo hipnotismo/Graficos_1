@@ -153,6 +153,7 @@
     <ClCompile Include="Entity2D.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="TextureImporter.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
@@ -163,15 +164,16 @@
     <ClInclude Include="Export.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Shape.h" />
+    <ClInclude Include="Sprite.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="TextureImporter.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Res\Shaders\FragmentShader.shader" />
     <None Include="..\Res\Shaders\SpriteFragmentShader.shader" />
-    <None Include="..\Res\Shaders\SpriteVertexSpriteShader.SWshader" />
-    <None Include="Res\Shaders\FragmentShader.shader" />
-    <None Include="Res\Shaders\VertexShader.shader" />
+    <None Include="..\Res\Shaders\SpriteVertexShader.shader" />
+    <None Include="..\Res\Shaders\VertexShader.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
