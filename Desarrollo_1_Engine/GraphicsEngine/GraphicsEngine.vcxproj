@@ -162,6 +162,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Entity2D.h" />
     <ClInclude Include="Export.h" />
+    <ClInclude Include="Keycode.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="Sprite.h" />
