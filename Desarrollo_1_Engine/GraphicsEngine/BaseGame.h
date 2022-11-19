@@ -5,6 +5,7 @@
 #include "Shape.h"
 #include "Sprite.h"
 #include "Export.h"
+#include "Input.h"
 
 struct GLFWmonitor;
 struct GLFWwindow;
@@ -18,6 +19,8 @@ private:
 	void UpdateBegin();
 	void UpdateEnd();
 	void EngineEnd();
+	Input* input;
+
 public:
 	BaseGame();
 	~BaseGame();
@@ -30,6 +33,8 @@ public:
 	void virtual Update() = 0;
 	void virtual Start() = 0;
 	void CameraMove(float x, float y, float z);
+
+	bool GetKey(int keycode);
 
 };
 #endif

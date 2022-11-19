@@ -45,6 +45,9 @@
     <ClCompile Include="Sprite.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseGame.h">
@@ -78,6 +81,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Keycode.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

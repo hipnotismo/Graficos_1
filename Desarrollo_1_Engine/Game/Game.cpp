@@ -31,6 +31,9 @@ float cameraX = 0.1f;
 float cameraY = 0.1f;
 float cameraZ = 0.1f;
 
+const float valueModif = 0.001f;
+
+float testX = -0.5f;
 void Game::Update()
 {
 	a += 0.0001;
@@ -39,12 +42,28 @@ void Game::Update()
 	//shape.SetPosition(-1 + a, 0, 0);
 	//squareAuto.Draw();*/
 
-	//CameraMove(cameraX, cameraY, cameraZ);
+	CameraMove(cameraX, cameraY, cameraZ);
 
 	//squareAuto.Rotate(0.0f, 0.0f, 0.0f + a);
 
 	//squareAuto.Draw();
 	//shape.Draw();
+	Input(KEYCODE_A, cameraX, -valueModif);
+
+	Input(KEYCODE_D, testX, valueModif);
+
+	test.SetPosition(testX, 0.0f, -1.0f);
+
 	test.Draw();
 	padoru.Draw();
+}
+
+bool Game::Input(int keycode, float& variable, float modif)
+{
+	if (GetKey(keycode))
+	{
+		variable += modif;
+		return true;
+	}
+	return false;
 }
