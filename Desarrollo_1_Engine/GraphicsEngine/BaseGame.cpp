@@ -62,6 +62,7 @@ bool BaseGame::Running()
 void BaseGame::UpdateBegin()
 {
 	window->ClearBackground();
+	UpdateDeltaTime();
 }
 
 void BaseGame::UpdateEnd()

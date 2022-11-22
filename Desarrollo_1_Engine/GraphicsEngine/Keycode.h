@@ -1,6 +1,16 @@
 #ifndef KEYCODE_H
 #define KEYCODE_H
 
+#define KEYCODE_0                  48
+#define KEYCODE_1                  49
+#define KEYCODE_2                  50
+#define KEYCODE_3                  51
+#define KEYCODE_4                  52
+#define KEYCODE_5                  53
+#define KEYCODE_6                  54
+#define KEYCODE_7                  55
+#define KEYCODE_8                  56
+#define KEYCODE_9                  57
 #define KEYCODE_A                  65
 #define KEYCODE_B                  66
 #define KEYCODE_C                  67
