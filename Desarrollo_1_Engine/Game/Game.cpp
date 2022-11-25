@@ -41,6 +41,10 @@ void Game::Start()
 	padoru.SetPosition(-0.5f, 0.0f, -1.0f);
 	padoru.Scale(1.0f, 1.0f, 1.0f);
 
+	padoru.canCollision = true;
+	link.canCollision = true;
+	link.strength = 1;
+
 	rightAnim = new Animation();
 	rightAnim->AddFrame(0, 0, 96, 104, 961, 831, 0.001, 10);
 	upAnim = new Animation();
@@ -59,7 +63,7 @@ void Game::Start()
 	idleDownAnim->AddFrame(2, 723, 96, 102, 961, 831, 0.007, 3);
 
 	link.SetAnimation(idleDownAnim);
-	link.SetPosition(-0.5f, 0.0f, -1.0f);
+	link.SetPosition(1.05f, 0.0f, -1.0f);
 	//link.Scale(1.0f, 1.0f, 1.0f);
 
 }
@@ -133,7 +137,8 @@ void Game::Update()
 	test.SetPosition(testX, 0.0f, -1.0f);
 
 	//test.Draw();
-	//padoru.Draw();
+	padoru.Draw();
+	link.CheckCollisionAABB(padoru);
 	link.Update();
 	link.Draw();
 

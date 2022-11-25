@@ -42,6 +42,7 @@ Animation* Sprite::GetAnimation()
 
 void Sprite::Update()
 {
+	lastPosition = position;
 
 	if (!actualAnim)
 		return;
