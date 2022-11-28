@@ -153,3 +153,16 @@ bool Game::Input(int keycode, float& variable, float modif)
 	}
 	return false;
 }
+
+void Game::Delete()
+{
+	if (rightAnim) delete rightAnim;
+	if (leftAnim) delete leftAnim;
+	if (rightAnim) delete rightAnim;
+	if (upAnim) delete upAnim;
+	if (downAnim) delete downAnim;
+	if (idleRightAnim) delete idleRightAnim;
+	if (idleUpAnim) delete idleUpAnim;
+	if (idleLeftAnim) delete idleLeftAnim;
+	if (idleDownAnim) delete idleDownAnim;
+}

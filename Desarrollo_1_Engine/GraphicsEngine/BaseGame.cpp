@@ -98,5 +98,7 @@ bool BaseGame::GetKey(int keycode)
 
 void BaseGame::EngineEnd()
 {
+	Delete();
+
 	glfwTerminate();
 }
