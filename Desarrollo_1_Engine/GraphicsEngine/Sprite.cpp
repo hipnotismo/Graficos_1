@@ -64,6 +64,7 @@ void Sprite::Update()
 		previousFrameIndex = currentFrameIndex;
 	}
 
+
 }
 
 void Sprite::Draw()

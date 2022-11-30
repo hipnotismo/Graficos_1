@@ -17,7 +17,7 @@ Game::Game()
 
 void Game::Play()
 {
-	EngineInit(800, 600, "MY EPIC GAME");
+	EngineInit(800, 600, "The tincho game");
 	UpdateEngine();
 }
 
@@ -136,7 +136,8 @@ void Game::Update()
 
 	test.SetPosition(testX, 0.0f, -1.0f);
 
-	//test.Draw();
+	link.Rotate(0, 0, a);
+	test.Draw();
 	padoru.Draw();
 	link.CheckCollisionAABB(padoru);
 	link.Update();
@@ -158,7 +159,6 @@ void Game::Delete()
 {
 	if (rightAnim) delete rightAnim;
 	if (leftAnim) delete leftAnim;
-	if (rightAnim) delete rightAnim;
 	if (upAnim) delete upAnim;
 	if (downAnim) delete downAnim;
 	if (idleRightAnim) delete idleRightAnim;
