@@ -89,11 +89,12 @@ void Game::Update()
 
 	//squareAuto.Draw();
 	//shape.Draw();
-	Input(KEYCODE_A, cameraX, -valueModif);
 
-	Input(KEYCODE_D, testX, valueModif);
+	//Input(KEYCODE_A, cameraX, -valueModif);
 
-	if (GetKey(KEYCODE_1))
+	Input(KEYCODE_1, testX, valueModif);
+
+	if (GetKey(KEYCODE_A))
 	{
 		linkState = Sleft;
 		link.SetAnimation(leftAnim);
@@ -103,7 +104,7 @@ void Game::Update()
 	{
 		link.SetAnimation(idleLeftAnim);
 	}
-	if (GetKey(KEYCODE_2))
+	if (GetKey(KEYCODE_D))
 	{
 		linkState = Sright;
 		link.SetAnimation(rightAnim);
@@ -113,7 +114,7 @@ void Game::Update()
 	{
 		link.SetAnimation(idleRightAnim);
 	}
-	if (GetKey(KEYCODE_3))
+	if (GetKey(KEYCODE_W))
 	{
 		linkState = Sup;
 		link.SetAnimation(upAnim);
@@ -123,7 +124,7 @@ void Game::Update()
 	{
 		link.SetAnimation(idleUpAnim);
 	}
-	if (GetKey(KEYCODE_4))
+	if (GetKey(KEYCODE_S))
 	{
 		linkState = Sdown;
 		link.SetAnimation(downAnim);
@@ -136,7 +137,7 @@ void Game::Update()
 
 	test.SetPosition(testX, 0.0f, -1.0f);
 
-	link.Rotate(0, 0, a);
+	//link.Rotate(0, 0, a);
 	test.Draw();
 	padoru.Draw();
 	link.CheckCollisionAABB(padoru);
