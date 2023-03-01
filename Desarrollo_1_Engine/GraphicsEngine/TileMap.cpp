@@ -46,24 +46,24 @@ void TileMap::setTexture(const TextureData& rkTexture) {
 	map = rkTexture;
 }
 //================================================
-void TileMap::draw() {
-
-	float mapWidth = -(_width * _tileWidth) / 2;
-	float mapHeight = (_height * _tileHeight) / 2;
-
-	for (int i = 0; i < _tileMapGrid.size(); i++) {
-		for (int y = 0; y < _height; y++) {
-			for (int x = 0; x < _width; x++) {
-				if (_tileMapGrid[i][y][x].getId() != NULL) {
-					_tileMapGrid[i][y][x].setPosX(mapWidth + (_tileWidth * x));
-					_tileMapGrid[i][y][x].setPosY(mapHeight - (_tileHeight * y));
-					_tileMapGrid[i][y][x].Draw();
-				}
-			}
-		}
-	}
-
-}
+//void TileMap::draw() {
+//
+//	float mapWidth = -(_width * _tileWidth) / 2;
+//	float mapHeight = (_height * _tileHeight) / 2;
+//
+//	for (int i = 0; i < _tileMapGrid.size(); i++) {
+//		for (int y = 0; y < _height; y++) {
+//			for (int x = 0; x < _width; x++) {
+//				if (_tileMapGrid[i][y][x].getId() != NULL) {
+//					_tileMapGrid[i][y][x].setPosX(mapWidth + (_tileWidth * x));
+//					_tileMapGrid[i][y][x].setPosY(mapHeight - (_tileHeight * y));
+//					_tileMapGrid[i][y][x].Draw();
+//				}
+//			}
+//		}
+//	}
+//
+//}
 
 bool TileMap::importTileMap(std::string filePath) {
 	tinyxml2::XMLDocument doc; //guarda el documento
@@ -247,15 +247,15 @@ void TileMap::checkCollision(Entity2D& object) {
 				//cout << true << endl;
 				if (!_tileMapGrid[k][j][i].isWalkable()) {
 
-					if (_tileMapGrid[k][j][i].checkCollision(object) == CollisionHorizontalRight ||
-						_tileMapGrid[k][j][i].checkCollision(object) == CollisionHorizontalLeft)
-						object.returnToPreviusPosH();
+					//if (_tileMapGrid[k][j][i].checkCollision(object) == CollisionHorizontalRight ||
+					//	_tileMapGrid[k][j][i].checkCollision(object) == CollisionHorizontalLeft)
+					//	object.returnToPreviusPosH();
 
-					if (_tileMapGrid[k][j][i].checkCollision(object) == CollisionVerticalUp)
-						object.returnToPreviusPos(object.GetPositionX(), object.previusPosY() + 0.2);
+					//if (_tileMapGrid[k][j][i].checkCollision(object) == CollisionVerticalUp)
+					//	object.returnToPreviusPos(object.GetPositionX(), object.previusPosY() + 0.2);
 
-					else if (_tileMapGrid[k][j][i].checkCollision(object) == CollisionVerticalDown)
-						object.returnToPreviusPos(object.GetPositionX(), object.previusPosY() - 0.2);
+					//else if (_tileMapGrid[k][j][i].checkCollision(object) == CollisionVerticalDown)
+					//	object.returnToPreviusPos(object.GetPositionX(), object.previusPosY() - 0.2);
 				}
 			}
 		}
@@ -296,6 +296,7 @@ TileMap::TileMap(const char* MapTiles, const char* filePath, int width)
 					tileXW / _imageWidthW, (tileYW + _tileHeightW) / _imageHeightW,
 					(tileXW + _tileWidthW) / _imageWidthW, (tileYW + _tileHeightW) / _imageHeightW);	
 				newSpite.weight = 90;
+				newSpite.canCollision = true;
 				ColisionTiles.push_back(newSpite);
 
 				break;

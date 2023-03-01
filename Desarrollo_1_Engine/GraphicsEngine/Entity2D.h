@@ -9,6 +9,8 @@ class ENGINE_API Entity2D : public Entity
 public:
 	Entity2D();
 	bool CheckCollisionAABB(Entity2D& vs);
+	bool CheckCollisionAABBInverse(Entity2D& vs);
+
 	bool canCollision = false;
 };
 
