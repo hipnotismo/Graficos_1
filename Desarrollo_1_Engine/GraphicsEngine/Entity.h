@@ -38,12 +38,18 @@ public:
 	float strength = 0;
 
 	void SetPosition(float x, float y, float z);
+	void setPosX(float x);
+	void setPosY(float y);
 	void Scale(float x, float y, float z);
 	void Rotate(float x, float y, float z);
 	void Translate(float x, float y, float z);
 	float GetPositionX();
 	float GetPositionY();
 	float GetPositionZ();
+
+	float GetScaleX();
+	float GetScaleY();
+	float GetScaleZ();
 
 };
 

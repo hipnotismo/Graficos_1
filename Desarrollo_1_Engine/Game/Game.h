@@ -1,5 +1,6 @@
 #include "GraphicsEngine/BaseGame.h"
 #include "GraphicsEngine/Animation.h"
+#include <string>
 
 class Game : public BaseGame
 {
@@ -9,6 +10,7 @@ private:
 	Sprite padoru;
 	Sprite test;
 	Sprite link;
+	TileMap tile;
 
 	void Update();
 	bool Input(int keycode, float& variable, float modif);
@@ -23,6 +25,10 @@ private:
 	Animation* idleUpAnim;
 	Animation* idleLeftAnim;
 	Animation* idleDownAnim;
+	Animation* test2;
+
+	std::vector<Sprite> tiles;
+
 public:
 	Game();
 	void Play();

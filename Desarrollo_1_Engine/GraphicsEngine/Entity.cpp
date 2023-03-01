@@ -67,6 +67,22 @@ void Entity::SetPosition(float x, float y, float z)
 	UpdateModel();
 }
 
+void Entity::setPosX(float x)
+{
+	position[0] = x;
+
+	translate = glm::translate(glm::mat4(1.0f), position);
+	UpdateModel();
+}
+
+void Entity::setPosY(float y)
+{
+	position[1] = y;
+
+	translate = glm::translate(glm::mat4(1.0f), position);
+	UpdateModel();
+}
+
 void Entity::Scale(float x, float y, float z)
 {
 	localScale[0] = x;
@@ -105,4 +121,17 @@ float Entity::GetPositionY()
 float Entity::GetPositionZ()
 {
 	return position.z;
+}
+
+float Entity::GetScaleX()
+{
+	return localScale.x;
+}
+float Entity::GetScaleY()
+{
+	return localScale.y;
+}
+float Entity::GetScaleZ()
+{
+	return localScale.z;
 }

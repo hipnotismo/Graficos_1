@@ -6,6 +6,7 @@
 #include "Sprite.h"
 #include "Export.h"
 #include "Input.h"
+#include "TileMap.h"
 
 struct GLFWmonitor;
 struct GLFWwindow;

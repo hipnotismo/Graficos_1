@@ -1,0 +1,27 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+    },
+    "last.imagePath": "E:/Repositorios/Graficos_1/Desarrollo_1_Engine/Res/Sprites",
+    "map.height": 5,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 17,
+    "map.tileWidth": 16,
+    "map.width": 5,
+    "openFiles": [
+    ],
+    "project": "Curses.tiled-project",
+    "recentFiles": [
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 17,
+        "width": 16
+    }
+}

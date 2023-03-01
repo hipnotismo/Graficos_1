@@ -29,6 +29,7 @@ void Animation::AddFrame(float xFrame, float yFrame, float widthFrame, float hei
 	frame.coords[3].U = frame.coords[1].U;
 	frame.coords[3].V = frame.coords[2].V;
 	myFrames.push_back(frame);
+	
 }
 void Animation::AddFrame(float xFrame, float yFrame, float widthFrame, float heightFrame, float textureWidth, float textureHegiht, float durationInSec, int frameCount)
 {

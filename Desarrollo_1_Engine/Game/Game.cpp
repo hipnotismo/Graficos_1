@@ -1,7 +1,24 @@
 #include "Game.h"
 
+static const char* s_MapTiles =
+"WWWWWWWWWWWWWWWWWWWWWWWW"
+"WGGWWWWWWWGGGGGGGGGGGGGW"
+"WGGGGGWWGGGGGGGGGGGGGGGW"
+"WGGGGGGGGGGGGGGGGGGGGGGW"
+"WGGGGGGGGGGWWWWWGGGGGGGW"
+"WGGGGGGGGGGGGGGGGGGGGGGW"
+"WGGGGGGGGGGGGGGGGGGGGGGW"
+"WGGWWGGGGGGGGGGGGGGGGGGW"
+"WGGGGWWWWWWWGGGGGWWWGGGW"
+"WGGGGGGGGGGGGGGWWWWGGGGW"
+"WGGGWWWWGGGGGGGGGGGGGGGW"
+"WWWWWWWWWWWWWWWWWWWWWWWW"
+;
+
 Game::Game()
 {
+	
+
 	downAnim = nullptr;
 	idleDownAnim = nullptr;
 	leftAnim = nullptr;
@@ -12,7 +29,7 @@ Game::Game()
 	idleUpAnim = nullptr;
 	/*shape = Shape(ShapeType::Triangle);
 	squareAuto = Shape(ShapeType::Square);*/
-
+	
 }
 
 void Game::Play()
@@ -29,21 +46,44 @@ State linkState = Sdown;
 
 void Game::Start()
 {
+	
+	char tileType = s_MapTiles[24];
+	std::cout << tileType << std::endl;
+
+	std::string tileMapPath = "Res/Sprites/letsTry.tmj";
+
 	/*shape.SetPosition(1.0f, 0.0f, 0.0f);
 	squareAuto.SetPosition(1.0f, 0.0f, 0.0f);*/
 	padoru = Sprite("Res/Sprites/padoru.png");
-	test = Sprite("Res/Sprites/R.png");
+	test = Sprite("Res/Sprites/map.png");
 	link = Sprite("Res/Sprites/link.png");
+
+	//tile = TileMap(tileMapPath);
+	tile = TileMap(s_MapTiles,"Res/Sprites/map.png",24);
+
+	test2 = new Animation();
+
+	/*test2->AddFrame(-10, 0, 15, 15, 202, 185, 10);
+	test.SetAnimation(test2);*/
+	float tileX = 200.0f, tileY = -100.0f, _tileWidth = 43, _tileHeight = 43;
+	int _imageWidth = 763, _imageHeight = 349;
+
+	test.SetTextureCoordinate(tileX / _imageWidth, tileY / _imageHeight,
+		(tileX + _tileWidth) / _imageWidth, tileY / _imageHeight,
+		tileX / _imageWidth, (tileY + _tileHeight) / _imageHeight,
+		(tileX + _tileWidth) / _imageWidth, (tileY + _tileHeight) / _imageHeight);
+
 
 	test.SetPosition(-0.5f, 0.0f, -1.0f);
 	test.Scale(1.0f, 1.0f, 1.0f);
 
-	padoru.SetPosition(-0.5f, 0.0f, -1.0f);
+	padoru.SetPosition(-1.5f, 0.0f, -1.0f);
 	padoru.Scale(1.0f, 1.0f, 1.0f);
+	padoru.weight = 90;
 
 	padoru.canCollision = true;
 	link.canCollision = true;
-	link.strength = 1;
+	link.strength = 0;
 
 	rightAnim = new Animation();
 	rightAnim->AddFrame(0, 0, 96, 104, 961, 831, 0.001, 10);
@@ -63,8 +103,7 @@ void Game::Start()
 	idleDownAnim->AddFrame(2, 723, 96, 102, 961, 831, 0.007, 3);
 
 	link.SetAnimation(idleDownAnim);
-	link.SetPosition(1.05f, 0.0f, -1.0f);
-	//link.Scale(1.0f, 1.0f, 1.0f);
+	link.SetPosition(1.0f, 2.0f, -1.0f);
 
 }
 float a = 1.0f;
@@ -77,7 +116,7 @@ const float valueModif = 0.001f;
 float testX = -0.5f;
 void Game::Update()
 {
-	a += 0.0001;
+	a += 0.001;
 	////shape.Rotate(0, 0, a);
 	///*shape.Scale(0.1 + a, 1, 1);
 	//shape.SetPosition(-1 + a, 0, 0);
@@ -98,7 +137,7 @@ void Game::Update()
 	{
 		linkState = Sleft;
 		link.SetAnimation(leftAnim);
-		link.SetPosition(link.GetPositionX() - 0.001f, link.GetPositionY(), link.GetPositionZ());
+		link.SetPosition(link.GetPositionX() - 0.1f, link.GetPositionY(), link.GetPositionZ());
 	}
 	else if (linkState == Sleft)
 	{
@@ -108,7 +147,7 @@ void Game::Update()
 	{
 		linkState = Sright;
 		link.SetAnimation(rightAnim);
-		link.SetPosition(link.GetPositionX() + 0.001f, link.GetPositionY(), link.GetPositionZ());
+		link.SetPosition(link.GetPositionX() + 0.1f, link.GetPositionY(), link.GetPositionZ());
 	}
 	else if (linkState == Sright)
 	{
@@ -118,7 +157,7 @@ void Game::Update()
 	{
 		linkState = Sup;
 		link.SetAnimation(upAnim);
-		link.SetPosition(link.GetPositionX(), link.GetPositionY() + 0.001f, link.GetPositionZ());
+		link.SetPosition(link.GetPositionX(), link.GetPositionY() + 0.1f, link.GetPositionZ());
 	}
 	else if (linkState == Sup)
 	{
@@ -128,7 +167,7 @@ void Game::Update()
 	{
 		linkState = Sdown;
 		link.SetAnimation(downAnim);
-		link.SetPosition(link.GetPositionX(), link.GetPositionY() - 0.001f, link.GetPositionZ());
+		link.SetPosition(link.GetPositionX(), link.GetPositionY() - 0.1f, link.GetPositionZ());
 	}
 	else if (linkState == Sdown)
 	{
@@ -137,13 +176,27 @@ void Game::Update()
 
 	test.SetPosition(testX, 0.0f, -1.0f);
 
+	tiles = tile.ReturnCollisions();
+
+	int once = 0;
+	if (once=0)
+	{
+		for (int i = 0; i < tiles.size(); i++) {
+
+			std::cout << "there are" << std::endl;
+		}
+	}
+	
 	//link.Rotate(0, 0, a);
-	test.Draw();
+	//test.Draw();
+	tile.draw();
 	padoru.Draw();
 	link.CheckCollisionAABB(padoru);
 	link.Update();
 	link.Draw();
+	tile.CollisionTileMap(link);
 
+	
 }
 
 bool Game::Input(int keycode, float& variable, float modif)

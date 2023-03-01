@@ -14,6 +14,7 @@ public:
 	void AddFrame(float xFrame, float yFrame, float widthFrame, float heightFrame,
 		float textureWidth, float textureHegiht, float durationInSec, int frameCount);
 	std::vector<Frame> myFrames;
+
 	void Update();
 	int currentFrame;
 	float currentTime;

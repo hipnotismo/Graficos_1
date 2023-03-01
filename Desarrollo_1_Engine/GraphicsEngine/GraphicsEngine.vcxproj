@@ -158,6 +158,9 @@
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="TextureImporter.cpp" />
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="TileMap.cpp" />
+    <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
@@ -175,6 +178,8 @@
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="TextureImporter.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="TileMap.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>

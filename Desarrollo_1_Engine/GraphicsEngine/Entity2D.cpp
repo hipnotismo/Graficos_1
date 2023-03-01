@@ -2,7 +2,7 @@
 
 Entity2D::Entity2D() : Entity()
 {
-
+	
 }
 
 bool Entity2D::CheckCollisionAABB(Entity2D& vs)
