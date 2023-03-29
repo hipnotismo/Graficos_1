@@ -72,7 +72,7 @@ float cameraX = 0.1f;
 float cameraY = 0.1f;
 float cameraZ = 0.1f;
 
-const float valueModif = 0.001f;
+const float valueModif = 0.01f;
 
 float testX = -0.5f;
 void Game::Update()
@@ -90,9 +90,17 @@ void Game::Update()
 	//squareAuto.Draw();
 	//shape.Draw();
 
-	//Input(KEYCODE_A, cameraX, -valueModif);
+	Input(KEYCODE_Z, cameraX, -valueModif);
+	Input(KEYCODE_X, cameraY, -valueModif);
+	Input(KEYCODE_C, cameraZ, -valueModif);
+
+	Input(KEYCODE_V, cameraX, valueModif);
+	Input(KEYCODE_B, cameraY, valueModif);
+	Input(KEYCODE_N, cameraZ, valueModif);
 
 	Input(KEYCODE_1, testX, valueModif);
+
+	link.Rotate(0, 0, a);
 
 	if (GetKey(KEYCODE_A))
 	{

@@ -19,6 +19,7 @@ Entity::Entity()
 void Entity::UpdateModel()
 {
 	model = translate * rotateX * rotateY * rotateZ * scale ;
+
 }
 
 void Entity::RotateX(float x)
@@ -30,6 +31,9 @@ void Entity::RotateX(float x)
 	axis[2] = 0.0f;
 
 	rotateX = glm::rotate(glm::mat4(1.0f), x, axis);
+
+	rotateX = glm::rotate(glm::mat4(1.0f), x, axis);
+
 	UpdateModel();
 }
 
@@ -82,6 +86,8 @@ void Entity::Rotate(float x, float y, float z)
 	RotateX(x);
 	RotateY(y);
 	RotateZ(z);
+
+
 }
 
 void Entity::Translate(float x, float y, float z)
